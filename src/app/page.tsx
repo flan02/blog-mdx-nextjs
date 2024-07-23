@@ -1,11 +1,15 @@
-import LatestPost from "@/components/custom/home/LatestPost";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import LatestPosts from "@/components/custom/home/LatestPosts";
+import MaxWidthWrapper from "@/components/reutilizable/MaxWidthWrapper";
+
 
 export default function Home() {
   return (
-    <main>
-      <LatestPost />
-    </main>
+    <MaxWidthWrapper>
+      <main>
+        <div>
+          <LatestPosts />
+        </div>
+      </main>
+    </MaxWidthWrapper>
   );
 }

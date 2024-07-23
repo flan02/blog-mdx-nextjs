@@ -9,7 +9,7 @@ function getMDXFiles(dir: string) {
 
 // TODO read data from those files
 function readMDXFile(filePath: fs.PathOrFileDescriptor) {
-  let rawContent = fs.readFileSync(filePath, 'utf-8');
+  let rawContent = fs.readFileSync(filePath, "utf-8");
   return matter(rawContent);
 }
 
@@ -25,11 +25,11 @@ function getMDXData(dir: string) {
 
 // TODO get all blog posts
 export function getBlogPosts() {
-  return getMDXData(path.join(process.cwd(), 'src', 'app', 'blog', 'contents')); // ? CWD: current working directory
+  return getMDXData(path.join(process.cwd(), "src", "app", "blog", "contents")); // ? CWD: current working directory
 }
 
 // TODO formatting the date
-export function formatData(date: string, includeRelative = false) {
+export function formatDate(date: string, includeRelative = true) { // ? 2nd param: add how many days ago the post has been published
   let currentDate = new Date();
   if (!date.includes('T')) {
     date = `${date}T00:00:00`;
@@ -56,4 +56,14 @@ export function formatData(date: string, includeRelative = false) {
   //  if (!includeRelative) {return fullDate;}
   // return includeRelative ? `${formattedDate} (${targetDate.toDateString()})` : fullDate;
   return includeRelative ? `${fullDate} (${formattedDate})` : fullDate;
+}
+
+export function getTermsOfServices() {
+  return getMDXData(
+    path.join(process.cwd(), "src", "app", "terms-of-services")
+  );
+}
+
+export function getPrivacyPolicy() {
+  return getMDXData(path.join(process.cwd(), "src", "app", "privacy-policy"));
 }

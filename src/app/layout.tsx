@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import Navbar from "@/components/custom/Navbar";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({
@@ -23,7 +25,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("", roboto.variable)}>{children}</body>
+      <body className={cn("", roboto.variable)}>
+        <ThemeProvider attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
