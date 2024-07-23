@@ -4,6 +4,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/custom/Navbar";
 import { ThemeProvider } from "next-themes";
+import MaxWidthWrapper from "@/components/reutilizable/MaxWidthWrapper";
+import Footer from "@/components/custom/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({
@@ -31,8 +33,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
+          <MaxWidthWrapper>
+            <Navbar />
+            {children}
+          </MaxWidthWrapper>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

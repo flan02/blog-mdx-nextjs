@@ -47,7 +47,7 @@ export function NavigationMenuDemo({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "flex items-start justify-between pt-10 px-4 z-50",
+        "flex items-start justify-between pt-10 z-50",
         className
       )}
     >
