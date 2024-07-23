@@ -24,7 +24,7 @@ export const POSTS: POST[] = [
     description: "How to make your next app Blazing fast",
   },
   {
-    title: "Animaion",
+    title: "Animation",
     href: "/blog/animations",
     description:
       "Everything you need to know about animations. We are going to learn about animation library like framer motion, GSAP and many more.",

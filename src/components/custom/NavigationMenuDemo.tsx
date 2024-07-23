@@ -52,9 +52,9 @@ export function NavigationMenuDemo({ className }: { className?: string }) {
       )}
     >
       <Link href={"/"}>
-        <div className="flex items-center justify-between w-32">
+        <div className="flex items-center justify-between w-36">
           <Icons.logo className="h-6 w-6" />
-          <p className="text-2xl font-bold">BLOG02</p>
+          <p className="text-3xl font-bold -mt-1">BLOG02</p>
         </div>
       </Link>
 

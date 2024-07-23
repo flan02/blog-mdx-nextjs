@@ -1,4 +1,7 @@
+
+
 export type Post = {
+  metadata: any
   post: {
     slug: string
     metadata: {

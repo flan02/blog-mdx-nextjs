@@ -96,8 +96,8 @@ export default function SlugPage({
         title={post.metadata.title}
         slug={post.slug}
       />
-      <Header>
-        <MaxwidthWrapper>
+      <MaxwidthWrapper className="lg:px-12 px-1/2 md:px-8">
+        <Header className="mb-4 pl-8">
           <BreadcrumbWithCustomSeparator
             category={post.metadata.category}
             slug={post.slug}
@@ -105,14 +105,13 @@ export default function SlugPage({
           <h1 className="title font-semibold text-2xl tracking-tighter mt-4">
             {post.metadata.title}
           </h1>
-          <div className="flex justify-between items-center mt-2 mb-4 text-sm">
+          <div className="flex justify-between items-center mt-2 text-sm">
             <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-2">
               {formatDate(post.metadata.publishedAt)}
             </p>
           </div>
-        </MaxwidthWrapper>
-      </Header>
-      <MaxwidthWrapper>
+        </Header>
+
         <article className="prose">
           <CustomMDX source={post.content} />
         </article>

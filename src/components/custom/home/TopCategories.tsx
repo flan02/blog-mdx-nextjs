@@ -12,7 +12,7 @@ const TopCategories = (props: Props) => {
         <Button
           key={index}
           variant={"secondary"}
-          className="hover:scale-110 transition-all"
+          className="hover:scale-110 transition-all bg-gray-200 hover:border hover:border-gray-200 dark:bg-[rgba(50,50,50,.2)] dark:hover:dark:bg-[rgba(50,50,50,.4)] dark:hover:border-gray-700"
           asChild
         >
           <Link href={post.href}>{post.title}</Link>

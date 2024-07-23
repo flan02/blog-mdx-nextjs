@@ -25,7 +25,7 @@ export default function LatestPosts() {
               return 1;
             })
             .map((post) => {
-              return <PostComponent post={post} key={post.slug} />
+              return <PostComponent post={post} key={post.slug} metadata={post.metadata} />
             })
       }
     </>
