@@ -7,34 +7,30 @@ import CustomMDX from "@/components/custom/CustomMdx";
 import ReportViews from "@/components/custom/ReportViews";
 import { baseUrl } from "@/app/sitemap";
 
+
+// $ This fc avoid -> ƒ (Dynamic) server-rendered on demand. The content is prerendered as static HTML (SSG)
 export async function generateStaticParams() {
   let posts = getBlogPosts();
-
   return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
-export function generateMetadata({
-  params,
-}: {
-  params: { slug: string; category: string };
-}) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
-  if (!post) {
-    return;
+type SearchParams = {
+  params: {
+    slug: string
+    category: string
   }
+}
 
-  let {
-    title,
-    publishedAt: publishedTime,
-    summary: description,
-    image,
-  } = post.metadata;
+export function generateMetadata({ params }: SearchParams) {
+  let post = getBlogPosts().find((post) => post.slug === params.slug);
+  if (!post) return notFound();
 
-  let ogImage = image
-    ? image
-    : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+
+  const { title, publishedAt: publishedTime, summary: description, image } = post.metadata;
+
+  let ogImage = image ? image : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   return {
     title,
@@ -56,11 +52,7 @@ export function generateMetadata({
   };
 }
 
-export default function SlugPage({
-  params,
-}: {
-  params: { category: string; slug: string };
-}) {
+export default function SlugPage({ params }: SearchParams) {
   let post = getBlogPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
