@@ -54,10 +54,7 @@ export function generateMetadata({ params }: SearchParams) {
 
 export default function SlugPage({ params }: SearchParams) {
   let post = getBlogPosts().find((post) => post.slug === params.slug);
-
-  if (!post) {
-    notFound();
-  }
+  if (!post) notFound();
 
   return (
     <>
@@ -83,11 +80,14 @@ export default function SlugPage({ params }: SearchParams) {
           }),
         }}
       />
+
+      {/* Client component, contains useEffect */}
       <ReportViews
         category={post.metadata.category}
         title={post.metadata.title}
         slug={post.slug}
       />
+
       <MaxwidthWrapper className="lg:px-12 px-1/2 md:px-8">
         <Header className="mb-4 pl-8">
           <BreadcrumbWithCustomSeparator

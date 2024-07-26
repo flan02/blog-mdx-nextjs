@@ -7,7 +7,7 @@ type Props = {}
 
 const TopCategories = (props: Props) => {
   return (
-    <div className="grid grid-cols-[repeat(auto-fill,minmax(100px,1fr))] gap-2">
+    <div className="min-w-[450px] md:min-w-[100px] lg:min-w-[300px] grid grid-cols-[repeat(auto-fill,minmax(100px,1fr))] gap-2">
       {POSTS.map((post, index) => (
         <Button
           key={index}

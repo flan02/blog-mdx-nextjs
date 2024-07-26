@@ -16,7 +16,7 @@ export default function Home() {
           <TopCategories />
         </div>
         <div className="mt-10 sticky top-0">
-          <h2>POPULAR POSTS</h2>
+          <h2 className="font-bold mb-4">POPULAR POSTS</h2>
           <PopularPosts />
         </div>
       </div>
