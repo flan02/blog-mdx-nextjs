@@ -17,6 +17,7 @@ type ResponseData = {
   slug: string;
 }[];
 
+// ? Copied from https://swr.vercel.app/docs/data-fetching
 export const fetcher = (
   ...args: Parameters<typeof fetch>
 ): Promise<ResponseData> => fetch(...args).then((res) => res.json());

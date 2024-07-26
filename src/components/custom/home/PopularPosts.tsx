@@ -1,22 +1,27 @@
 "use client";
 
 //import { popularPosts } from "@/lib/placeholder-data";
+import useSWR from "swr";
+
 import { fetcher, fetchUrl } from "@/lib/utils";
 import { Icons } from "@/components/icons/Icons";
 import Link from "next/link";
-import useSWR from "swr";
-import Post from "@/components/skeletons/Post";
+import PostSkeleton from "@/components/skeletons/PostSkeleton";
 
-type Props = {}
+type Post = {
+  category: string;
+  title: string;
+  slug: string;
+};
 
-const PopularPosts = (props: Props) => {
+const PopularPosts = () => {
   const { data, error, isLoading } = useSWR(fetchUrl, fetcher);
 
   if (error) return <div>Failed to load</div>;
-  if (isLoading) return <Post />;
+  if (isLoading) return <PostSkeleton />;
   return (
     <ul className="overflow-auto">
-      {data?.map((post: { category: string; slug: string; title: string }) => (
+      {data?.map((post: Post) => (
         <Link href={`/blog/${post.category}/${post.slug}`} key={post.title}>
           <li className="flex items-center gap-2 group cursor-pointer py-2">
             <Icons.arrowRight className="h-6 w-6 group-hover:translate-x-1 transition-all" />

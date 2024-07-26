@@ -3,7 +3,7 @@ import { Skeleton } from "../ui/skeleton";
 
 type Props = {}
 
-const Post = (props: Props) => {
+const PostSkeleton = (props: Props) => {
   return (
     <div className="flex flex-col space-y-3">
       <Skeleton className="h-[20px] w-[350px] rounded-xl" />
@@ -16,4 +16,4 @@ const Post = (props: Props) => {
   );
 }
 
-export default Post
+export default PostSkeleton

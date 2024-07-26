@@ -3,7 +3,7 @@ import { db } from "@/db";
 export async function GET() {
   try {
     const data = await db.blog.findMany({
-      take: 10,
+      take: 10, // limit to 10 posts
       select: { title: true, category: true, slug: true },
       orderBy: [{ view_count: "desc" }],
     });
