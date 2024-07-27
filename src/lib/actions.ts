@@ -1,9 +1,10 @@
 "use server";
 import { db } from "@/db";
-import { Prisma, } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
-import { PrismaClientKnownRequestError } from '@prisma/client/runtime/react-native.js'
+
+
 const FormSchema = z.object({
   id: z.number(),
   email: z.string().min(1, { message: "Email is required." }),
@@ -38,14 +39,14 @@ export async function createSubscriber(prevState: State, formData: FormData) {
   try {
     await db.subscriber.create({
       data: {
-        email: email,
-      },
+        email: email
+      }
     });
     revalidatePath("/");
     return { message: "Thank you for Subscribing!" };
   } catch (error) {
     if (error) {
-      if (error instanceof PrismaClientKnownRequestError) {
+      if (error instanceof Prisma.PrismaClientKnownRequestError) {
         if (error.code === "P2002") {
           return {
             message: "Email already Exist in the DB",
@@ -53,7 +54,7 @@ export async function createSubscriber(prevState: State, formData: FormData) {
         }
       }
     }
-
     return { message: "Database Error: Failed to create Subscriber." };
+
   }
 }

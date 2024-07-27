@@ -13,7 +13,7 @@ const ReportViews = ({ slug, title, category }: ViewProps) => {
     postData({ slug, title, category })
   }, [slug, title, category])
   return (
-    <div>ReportViews</div>
+    <></>
   )
 }
 

@@ -11,11 +11,13 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Icons } from "../icons/Icons";
 import MaxWidthWrapper from "../reutilizable/MaxWidthWrapper";
+import { useState } from "react";
 type Props = {}
 
 const Footer = (props: Props) => {
   const initialState = { message: "", errors: {} };
   const [state, dispatch] = useFormState(createSubscriber, initialState);
+
   return (
 
     <footer className="bg-gray-200 py-8 dark:bg-[rgba(50,50,50,.2)] mt-10">
@@ -32,7 +34,7 @@ const Footer = (props: Props) => {
               </p>
               <div className="flex space-x-4">
                 <a
-                  href="https://twitter.com/w3tsadev"
+                  href="https://twitter.com/flan02"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Twitter"
@@ -40,7 +42,7 @@ const Footer = (props: Props) => {
                   <Icons.twitter className="h-6 w-6 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300" />
                 </a>
                 <a
-                  href="https://github.com/w3tsadev"
+                  href="https://github.com/flan02"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Github"
@@ -69,7 +71,7 @@ const Footer = (props: Props) => {
               <ul className="space-y-2 text-sm">
                 <li>
                   <a
-                    href="mailto:w3tsadev@gmail.com"
+                    href="mailto:chanivetdan@hotmail.com"
                     className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
                   >
                     Contact
@@ -133,7 +135,7 @@ const Footer = (props: Props) => {
                       </p>
                     ))}
                   {!state?.errors?.email && (
-                    <p className="text-xs text-green-500">{state?.message}</p>
+                    <p className="text-xs mt-2 text-green-500">{state?.message}</p>
                   )}
                 </div>
               </form>
