@@ -20,6 +20,15 @@ type SearchParams = {
   }
 }
 
+export function generateMetadata({ params }: SearchParams) {
+  let { category } = params;
+
+  return {
+    title: category.toLocaleUpperCase(),
+    description: `All articles regarding ${category}`,
+  };
+}
+
 
 export default function CategoryPage({ params }: SearchParams) {
   const postsFiltered = usePostsFiltered(params.category)
@@ -27,7 +36,6 @@ export default function CategoryPage({ params }: SearchParams) {
   if (postsFiltered.length === 0) return notFound()
 
   return (
-
     <MaxWidthWrapper className="">
       <Header className="mt-4">
         <h1 className="title font-semibold text-2xl tracking-wider uppercase">
@@ -48,7 +56,8 @@ export default function CategoryPage({ params }: SearchParams) {
                 date={post.metadata.publishedAt}
               />
             </Link>
-          ))}
+          ))
+        }
       </div>
     </MaxWidthWrapper>
 
