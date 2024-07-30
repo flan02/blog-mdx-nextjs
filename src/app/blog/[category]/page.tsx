@@ -10,7 +10,7 @@ import { getBlogPosts } from "../utils"
 export async function generateStaticParams() {
   let posts = getBlogPosts()
   return posts.map((post) => ({
-    category: post.metadata.category // returns the category of each post in an object
+    category: post.metadata.category // ? returns the category of each post in an object
   }))
 }
 
@@ -47,6 +47,7 @@ export default function CategoryPage({ params }: SearchParams) {
         {
           postsFiltered.map((post: any) => (
             <Link
+
               href={`/blog/${post.metadata.category}/${post.slug}`}
               key={post.slug}
             >

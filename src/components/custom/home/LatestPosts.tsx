@@ -7,7 +7,9 @@ export default function LatestPosts() {
   const orderedLatestPosts = usePostsLatest();
   return (
     <>
-      <h1 className="inline-block mt-6 font-heading text-3xl tracking-tight lg:text-4xl">Recently Published</h1>
+      <h1 className="inline-block mt-6 font-heading text-2xl tracking-tight lg:text-3xl">
+        Recently Published
+      </h1>
       {
         orderedLatestPosts.length === 0
           ? <p>No post available</p>
