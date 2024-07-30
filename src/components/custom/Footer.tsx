@@ -12,6 +12,7 @@ import { Button } from "../ui/button";
 import { Icons } from "../icons/Icons";
 import MaxWidthWrapper from "../reutilizable/MaxWidthWrapper";
 import { useState } from "react";
+import { TreeDeciduous, TreePine } from "lucide-react";
 type Props = {}
 
 const Footer = (props: Props) => {
@@ -26,8 +27,8 @@ const Footer = (props: Props) => {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <Icons.logo className="h-6 w-6" />
-                <span className="text-md font-semibold hover:underline dark:hover:underline">BLOG02</span>
+                <TreePine className="size-6" />
+                <span className="text-md font-semibold hover:underline dark:hover:underline">TREEBALL</span>
               </div>
               <p className="text-gray-500 dark:text-gray-400 text-sm">
                 Stay Up to Date with the latest news and insights from our blog.

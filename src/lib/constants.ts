@@ -3,36 +3,36 @@ import { POST } from "@/types";
 
 export const POSTS: POST[] = [
   {
-    title: "React",
-    href: "/blog/react",
+    title: "NBA",
+    href: "/blog/nba",
     description:
-      "Learn React.js and Next.js in a simple to understand articles",
+      "Learn about NBA and the latest news about the NBA. We are going to learn about the NBA players, teams, etc.",
   },
   {
-    title: "Javascript",
-    href: "/blog/javascript",
-    description: "Learn what are new in the javascript world",
+    title: "Varsity",
+    href: "/blog/varsity",
+    description: "All about the varsity sports and the latest news.",
   },
   {
-    title: "CSS",
-    href: "/blog/css",
-    description: "Everything about CSS and the new features.",
+    title: "Euroleague",
+    href: "/blog/euroleague",
+    description: "Everything you need to know about Euroleague.",
   },
   {
-    title: "Performance",
-    href: "/blog/performance",
-    description: "How to make your next app Blazing fast",
+    title: "Draft",
+    href: "/blog/draft",
+    description: "Know about the NBA draft and the top prospects every year.",
   },
   {
-    title: "Animation",
-    href: "/blog/animations",
+    title: "NCAA",
+    href: "/blog/ncaa",
     description:
-      "Everything you need to know about animations. We are going to learn about animation library like framer motion, GSAP and many more.",
+      "A lot of information about the NCAA and the latest news about future NBA players.",
   },
   {
-    title: "Career",
-    href: "/blog/career",
+    title: "Trades",
+    href: "/blog/trades",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "Information about the latest trades in the NBA, Euroleague, NCAA and the latest news.",
   },
 ];

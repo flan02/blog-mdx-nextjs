@@ -17,6 +17,7 @@ import {
 import { POSTS } from "@/lib/constants"
 import ModeToggle from "../reutilizable/ModeToggle"
 import { Icons } from "../icons/Icons"
+import { TreePine } from "lucide-react"
 
 
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(({ className, title, children, ...props }, ref) => {
@@ -52,9 +53,9 @@ export function NavigationMenuDemo({ className }: { className?: string }) {
       )}
     >
       <Link href={"/"}>
-        <div className="flex items-center justify-between w-36">
-          <Icons.logo className="h-6 w-6" />
-          <p className="text-3xl font-bold -mt-1">BLOG02</p>
+        <div className="flex items-center justify-start">
+          <TreePine className="mb-1" size={32} />
+          <p className="text-3xl font-bold -mt-1">TREEBALL</p>
         </div>
       </Link>
 

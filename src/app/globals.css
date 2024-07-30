@@ -211,6 +211,8 @@ table {
   max-width: fit-content;
   overflow-x: auto;
   white-space: nowrap;
+  border-collapse: collapse;
+  color: red;
 }
 
 .title {

@@ -10,7 +10,7 @@ type SiteConfig = {
 };
 
 export const siteConfig: SiteConfig = {
-  name: "BLOG02",
+  name: "TREEBALL",
   description:
     "An Open source Technical Blog platform with Next.js 14 with shadcn/ui, prisma and markdown support.",
   url: "http://localhost:3000",

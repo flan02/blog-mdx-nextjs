@@ -36,7 +36,7 @@ export default function CategoryPage({ params }: SearchParams) {
   if (postsFiltered.length === 0) return notFound()
 
   return (
-    <MaxWidthWrapper className="">
+    <MaxWidthWrapper className="h-[85vh]">
       <Header className="mt-4">
         <h1 className="title font-semibold text-2xl tracking-wider uppercase">
           {postsFiltered[0]?.metadata.category}

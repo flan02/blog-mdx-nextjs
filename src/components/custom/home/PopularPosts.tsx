@@ -15,8 +15,11 @@ type Post = {
 };
 
 const PopularPosts = () => {
-  const { data, error, isLoading } = useSWR(fetchUrl, fetcher);
-
+  let { data, error, isLoading } = useSWR(fetchUrl, fetcher);
+  // console.log(data);
+  data = data?.filter((data) => {
+    if (data.category === "nba" || data.category === "analytics" || data.category === "varsity" || data.category === "draft" || data.category === "ncaa" || data.category === "trades") return data;
+  })
   if (error) return <div>Failed to load</div>;
   if (isLoading) return <PostSkeleton />;
   return (
